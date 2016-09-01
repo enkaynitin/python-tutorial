@@ -1,0 +1,553 @@
+  File "<stdin>", line 1, in <module>
+NameError: name 'L' is not defined
+>>> 
+>>> def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+...     print"--This parrot wouldn't", action,
+...     print "if you put", voltage, "volts through it."
+...     print "--Lovely plumage, the", type
+...     print "--It's", state, "!"
+... 
+>>> def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+...     print "--This parrot wouldn't", action,
+...     print "if you put", voltage, "volts through it."
+...     print "--Lovely plumage, the", type
+...     print "--It's", state, "!"
+... 
+>>> parrot(1000)
+--This parrot wouldn't voom if you put 1000 volts through it.
+--Lovely plumage, the Norwegian Blue
+--It's a stiff !
+>>> parrot(voltage=1000)
+--This parrot wouldn't voom if you put 1000 volts through it.
+--Lovely plumage, the Norwegian Blue
+--It's a stiff !
+>>> parrot(voltage=100000, action='VOOOOOM')
+--This parrot wouldn't VOOOOOM if you put 100000 volts through it.
+--Lovely plumage, the Norwegian Blue
+--It's a stiff !
+>>> parrot('a million', 'bereft of life', 'jump')
+--This parrot wouldn't jump if you put a million volts through it.
+--Lovely plumage, the Norwegian Blue
+--It's bereft of life !
+>>> parrot('a thousand', state='pushing up the daisies')
+--This parrot wouldn't voom if you put a thousand volts through it.
+--Lovely plumage, the Norwegian Blue
+--It's pushing up the daisies !
+>>> parrot()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: parrot() takes at least 1 argument (0 given)
+>>> parrot(voltage=5.9, 'dead')
+  File "<stdin>", line 1
+SyntaxError: non-keyword arg after keyword arg
+>>> parrot(actor='John Cleese')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: parrot() got an unexpected keyword argument 'actor'
+>>> 
+>>> def function(a):
+...     pass
+... 
+>>> 
+>>> function(0, a =0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: function() got multiple values for keyword argument 'a'
+>>> def cheeseshop(kind, *argument, **keywords):
+...     print "--Do you have any", kind, "?"
+...     print "--I'm Sorry, We're all out of", kind, "?"
+... 
+KeyboardInterrupt
+>>> def cheeseshop(kind, *argument, **keywords):
+...     print "--I'm Sorry, We're all out of", kind, "?"
+... def cheeseshop(kind, *argument, **keywords):
+KeyboardInterrupt
+>>>     print "--I'm Sorry, We're all out of", kind, "?"
+
+
+
+
+
+
+>>> def cheeseshop(kind, *argument, **keywords):
+...     print "--Do you have any", kind, "?"
+...     print "--I'm Sorry, We're all out of", kind
+... for arg in arguments:
+  File "<stdin>", line 4
+    for arg in arguments:
+      ^
+SyntaxError: invalid syntax
+>>> def cheeseshop(kind, *argument, **keywords):
+...     print "--Do you have any", kind, "?"
+...     print "--I'm Sorry, We're all out of", kind
+...     for arg in arguments:
+...             print arg
+...     print "-" * 40
+... keys = sorted(keyword.keys())
+  File "<stdin>", line 7
+    keys = sorted(keyword.keys())
+       ^
+SyntaxError: invalid syntax
+>>> 
+
+
+
+
+>>> def cheeseshop(kind, *argument, **keywords):
+...     print "--Do you have any", kind, "?"
+...     print "--I'm Sorry, We're all out of", kind
+...     for arg in arguments:
+...             print arg
+...     print "-" * 40
+...     keys = sorted(keyword.keys())
+...     for kw in keys:
+...             print kw, ":", keywords[kw]
+... 
+>>> cheeseshop("Limberger", "It's very runny, sir.",
+...             "It's really very, VERY runny, sir.",
+...             shopkeeper="Michael Palin',
+  File "<stdin>", line 3
+    shopkeeper="Michael Palin',
+                              ^
+SyntaxError: EOL while scanning string literal
+>>> cheeseshop("Limberger", "It's very runny, sir.",
+...             "It's really very, VERY runny, sir.",
+...             shopkeeper="Michael Palin",
+...             client = "John Cleese",
+...             sketch = "Cheese Shop Sketch"
+... 
+... 
+KeyboardInterrupt
+>>> 
+>>> cheeseshop("Limberger", "It's very runny, sir.",
+...             "It's really very, VERY runny, sir.",
+...             shopkeeper="Michael Palin",
+...             client = "John Cleese",
+...             sketch = "Cheese Shop Sketch")
+--Do you have any Limberger ?
+--I'm Sorry, We're all out of Limberger
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<stdin>", line 4, in cheeseshop
+NameError: global name 'arguments' is not defined
+>>> 
+>>> def cheeseshop(kind, *argument, **keywords):
+...     print "--Do you have any", kind, "?"
+...     print "--I'm Sorry, We're all out of", kind
+...     for kw in keys:
+KeyboardInterrupt
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> def cheeseshop(kind, *arguments, **keywords):
+...     print "--Do you have any", kind, "?"
+...     print "--I'm Sorry, We're all out of", kind
+...     for arg in arguments:
+...             print arg
+...     print "-" * 40
+...     keys = sorted(keyword.keys())
+...     for kw in keys:
+...             print kw, ":", keywords[kw]
+... 
+>>> cheeseshop("Limburger", "It's very runny, sir.",
+...     "It's really very, VERY runny, sir.",
+...     shopkeeper='Michel Palin',
+...     client ="John Cleese"
+...     sketch = "Cheese Shop Sketch")
+  File "<stdin>", line 5
+    sketch = "Cheese Shop Sketch")
+         ^
+SyntaxError: invalid syntax
+>>> cheeseshop("Limburger", "It's very runny, sir.",
+...     "It's really very, VERY runny, sir.",
+...     client ="John Cleese",
+...     client ="John Cleese"
+KeyboardInterrupt
+>>> 
+>>> cheeseshop("Limburger", "It's very runny, sir.",
+...     "It's really very, VERY runny, sir.",
+...     shopkeeper='Michel Palin',
+...     client ="John Cleese",
+...     sketch = "Cheese Shop Sketch")
+--Do you have any Limburger ?
+--I'm Sorry, We're all out of Limburger
+It's very runny, sir.
+It's really very, VERY runny, sir.
+----------------------------------------
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<stdin>", line 7, in cheeseshop
+NameError: global name 'keyword' is not defined
+>>>     for kw in keys:
+KeyboardInterrupt
+>>> 
+
+
+
+
+
+
+
+>>> def cheeseshop(kind, *arguments, **keywords):
+...     print "--Do you have any", kind, "?"
+...     print "--I'm sorry, we're all out of", kind
+...     for arg in arguments:
+...             print arg
+...     print "-" *40
+...     keys = sorted(keyword.keys())
+...     for kw in keys:
+...             print kw, ":", keywords[kw]
+... 
+>>> cheeseshop("Limberger, "It's very runny, sir.",
+  File "<stdin>", line 1
+    cheeseshop("Limberger, "It's very runny, sir.",
+                             ^
+SyntaxError: invalid syntax
+>>> cheeseshop("Limberger", "It's very runny, sir.",
+...     "It's really very, VERY runny, sir.",
+...     shopkeeper = 'Michael Palin',
+...     client = "John Cleese",
+...     sketch = Cheese Shop Sketch")
+  File "<stdin>", line 5
+    sketch = Cheese Shop Sketch")
+                       ^
+SyntaxError: invalid syntax
+>>> cheeseshop("Limberger", "It's very runny, sir.",
+...     "It's really very, VERY runny, sir.",
+...     client = "John Cleese",
+... cheeseshop("Limberger", "It's very runny, sir.",
+KeyboardInterrupt
+>>> 
+>>> cheeseshop("Limberger", "It's very runny, sir.",
+...     "It's really very, VERY runny, sir.",
+...     shopkeeper = 'Michael Palin',
+...     client = "John Cleese",
+...     sketch = "Cheese Shop Sketch")
+--Do you have any Limberger ?
+--I'm sorry, we're all out of Limberger
+It's very runny, sir.
+It's really very, VERY runny, sir.
+----------------------------------------
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "<stdin>", line 7, in cheeseshop
+NameError: global name 'keyword' is not defined
+>>> 
+
+
+
+
+
+
+
+
+
+>>> def cheeseshop(kind, *arguments, **keywords):
+...     print"--Do you have any", kind, "?"
+...     print "--I'm sorry, we are out of", kind
+...     for arg in arguments:
+...             print arg
+...     print "-" * 40
+...     keys = sorted(keywords.keys())
+...     for kw in keys:
+...             print kw, ":",keywords[kw]
+... 
+>>> cheeseshop("Limberger", "It's very runny, sir.",
+...     "It's really very, VERY runny, sir.",
+...     shopkeeper = 'Michel Palin',
+...     client = "John Cleese",
+...     sketch = "Cheese Shop Sketch")
+--Do you have any Limberger ?
+--I'm sorry, we are out of Limberger
+It's very runny, sir.
+It's really very, VERY runny, sir.
+----------------------------------------
+client : John Cleese
+shopkeeper : Michel Palin
+sketch : Cheese Shop Sketch
+>>> 
+>>> def write_multiple_items(file, separator, *args):
+...     file.write(separator.join(args))
+... 
+>>> range(3,6)
+[3, 4, 5]
+>>> args = [3,6]
+>>> range(*args)
+[3, 4, 5]
+>>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>> def parrot(voltage, state='a stiff', action='voom'):
+...     print "--This parrot wouldn't, action
+  File "<stdin>", line 2
+    print "--This parrot wouldn't, action
+                                        ^
+SyntaxError: EOL while scanning string literal
+>>> def parrot(voltage, state='a stiff', action='voom'):
+...     print "--This parrot wouldn't, action,
+  File "<stdin>", line 2
+    print "--This parrot wouldn't, action,
+                                         ^
+SyntaxError: EOL while scanning string literal
+>>> def parrot(voltage, state='a stiff', action='voom'):
+...     print "--This parrot wouldn't", action,
+...     print "if you put", voltage, "volts through it.",
+...     print "E's", state, "!"
+... 
+>>> d = {"voltage": "four million", "state": "bleeding' demised", "action": "VOOM"}
+>>> parrot(**d)
+--This parrot wouldn't VOOM if you put four million volts through it. E's bleeding' demised !
+>>> 
+
+>>> def make_incrementor(n):
+...     return lambda x: x + n
+... 
+>>> f = make_incrementor(42)
+>>> f(0)
+42
+>>> f(1)
+43
+>>> pairs = [(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+>>> pairs.sort(key=lambda pair: pair[1])
+>>> pairs
+[(4, 'four'), (1, 'one'), (3, 'three'), (2, 'two')]
+>>> def my_function():
+...     """Do nothing, but document it.
+... 
+...     No, really, it doesn't do anything.
+...     """
+...     pass
+... 
+>>> print my function.__doc__
+  File "<stdin>", line 1
+    print my function.__doc__
+                    ^
+SyntaxError: invalid syntax
+>>> print my_function.__doc__
+Do nothing, but document it.
+
+	No, really, it doesn't do anything.
+	
+>>> 
+>>> a = [66.25, 333, 333, 1, 1234.5]
+>>> print a.count(333), a.count(66.25), a.count('x')
+2 1 0
+>>> a.insert(2, -1)
+>>> a.append(333)
+>>> a
+[66.25, 333, -1, 333, 1, 1234.5, 333]
+>>> a.index(333)
+1
+>>> a.remove(333)
+>>> a
+[66.25, -1, 333, 1, 1234.5, 333]
+>>> a.reverse()
+>>> a
+[333, 1234.5, 1, 333, -1, 66.25]
+>>> a.sort()
+>>> a
+[-1, 1, 66.25, 333, 333, 1234.5]
+>>> a.pop()
+1234.5
+>>> a
+[-1, 1, 66.25, 333, 333]
+>>> stack = [3,4,5]
+>>> stack.append
+<built-in method append of list object at 0x7f139d943050>
+>>> stack.append(6)
+>>> stack.append(7)
+>>> stack
+[3, 4, 5, 6, 7]
+>>> stack.pop(7)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: pop index out of range
+>>> stack.pop()
+7
+>>> stack.pop()
+6
+>>> stack.pop()
+5
+>>> stack
+[3, 4]
+>>> 
+>>> from collection import deque
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ImportError: No module named collection
+>>> from collections import deque
+>>> queue = deque(["Eric", "John", "Michael"])
+>>> queue.append("Terry")
+>>> queue.append("Graham")
+>>> queue.popleft()
+'Eric'
+>>> queue.popleft()
+'John'
+>>> queue
+deque(['Michael', 'Terry', 'Graham'])
+>>> 
+
+
+
+
+
+
+
+
+
+>>> def f(x): return x % 3 == 0 or x % 5 == 0 
+... 
+>>> filter(f, range(2, 25))
+[3, 5, 6, 9, 10, 12, 15, 18, 20, 21, 24]
+>>> def cube(x):
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block
+>>> def cube(x): return x*x*x
+... 
+>>> map(cube, range(1, 11))
+[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+>>> seq = range(8)
+>>> def add(x, y): return x+y
+... map(add, seq, seq)
+  File "<stdin>", line 2
+    map(add, seq, seq)
+      ^
+SyntaxError: invalid syntax
+>>> map(add, seq, seq)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'add' is not defined
+>>> seq = range(8)
+>>> map(add, seq, seq)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'add' is not defined
+>>> seq = range(8)
+>>> def add(x, y): return x+y
+... 
+>>> map(add, seq, seq)
+[0, 2, 4, 6, 8, 10, 12, 14]
+>>> def add(x,y): return x+y
+... 
+>>> reduce(add, range(1,11))
+55
+>>> 
+>>> def sum(seq):
+...     def add(x,y): return x+y
+...     return reduce(add, seq, 0)
+... 
+>>> sum(range(1,11))
+55
+>>> sum([])
+0
+>>> squares = []
+>>> for x in range(10):
+...     squares.append(x**2)
+... 
+>>> squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> squares = [x**2 for x in range(10)]
+>>> squares = map(lambda x: x**2, range(10)
+... 
+... 
+... 
+... squares = map(lambda x: x**2, range(10))
+  File "<stdin>", line 5
+    squares = map(lambda x: x**2, range(10))
+          ^
+SyntaxError: invalid syntax
+>>> squares = [x**2 for x in range(10)]
+>>> squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> squares = [map(lambda x: x**2, range(10))]
+>>> squares
+[[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]]
+>>> squares = map(lambda x: x**2, range(10)),
+>>> squares
+([0, 1, 4, 9, 16, 25, 36, 49, 64, 81],)
+>>> squares = map(lambda x: x**2, range(10))
+>>> squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+>>> [(x,y) for x in [1,2,3] for y in [3,1,4] if x! =y]
+  File "<stdin>", line 1
+    [(x,y) for x in [1,2,3] for y in [3,1,4] if x! =y]
+                                                 ^
+SyntaxError: invalid syntax
+>>> [(x,y) for x in [1,2,3] for y in [3,1,4] if x != y]
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+>>> 
+
+>>> combs = []
+>>> for x in [1,2,3]:
+...     for y in [3,1,4]:
+...             if x != y:
+...                     combs.append((x, y))
+... 
+>>> combs
+[(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+
+
+
+[4, 2, 0, 2, 4]
+>>> freshfruit = [' banana', ' loganberry ', 'passion fruit ']
+>>> [weapon.strip() for weapon in freshfruit]
+['banana', 'loganberry', 'passion fruit']
+>>> # create a list of 2-tuples like (number, square)
+... 
+>>> [(x, x**2) for x in range(6)]
+[(0, 0), (1, 1), (2, 4), (3, 9), (4, 16), (5, 25)]
+>>> [x, x##2 for x in range(6)]
+... 
+... 
+... 
+... 
+KeyboardInterrupt
+>>> [x, x**2 for x in range(6)]
+  File "<stdin>", line 1
+    [x, x**2 for x in range(6)]
+               ^
+SyntaxError: invalid syntax
+>>> vec = [[1,2,3], [4,5,6], [7,8,9]]
+>>> [num for elem in vec for num in elem]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> from math import pi
+>>> [str(round(pi, i) for i in range(1, 6)]
+  File "<stdin>", line 1
+    [str(round(pi, i) for i in range(1, 6)]
+                                          ^
+SyntaxError: invalid syntax
+>>> [str(round(pi, i)) for i in range(1, 6)]
+['3.1', '3.14', '3.142', '3.1416', '3.14159']
+
