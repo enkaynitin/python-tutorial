@@ -1,0 +1,191 @@
+enkay@dab:~$ python 
+Python 2.7.12 (default, Jul  1 2016, 15:12:24) 
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 8/3
+2
+>>> 8.0/3
+2.6666666666666665
+>>> 8.0/5
+1.6
+>>> 8/5
+1
+>>> (50 - 5.0*6) / 4
+5.0
+>>> 8 / 5.0
+1.6
+>>> 17 /3
+5
+>>> 17 /3.0
+5.666666666666667
+>>> 17 // 5.0
+3.0
+>>> 17 // 3.0
+5.0
+>>> 17 % 3
+2
+>>> 5 * 3 + 2
+17
+>>> 5 ** 2
+25
+>>> 2 ** 7
+128
+>>> width = 20
+>>> height = 5 * 9
+>>> width * height
+900
+>>> n
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'n' is not defined
+>>> 3 * 3.75 / 1.5 
+7.5
+>>> 7.0 / 2
+3.5
+>>> tax = 12.5 / 100
+>>> price = 100.50
+>>> price * tax
+12.5625
+>>> price + tax
+100.625
+>>> price + _
+201.125
+>>> price * tax
+12.5625
+>>> price + _
+113.0625
+>>> round(_,2)
+113.06
+>>> 'spam eggs'
+'spam eggs'
+>>> 'doesn\'t'
+"doesn't"
+>>> "doesn't"
+"doesn't"
+>>> '"yes," he said.'
+'"yes," he said.'
+>>> "\"Yes,\" he said."
+'"Yes," he said.'
+>>> '"Isn\'t,"  she said.'
+'"Isn\'t,"  she said.'
+>>> '"Isn\'t," she said.'
+'"Isn\'t," she said.'
+>>> print '"Isn\'t," she said.'
+"Isn't," she said.
+>>> s = 'First line.\nSecond line.' #|n means newline
+>>> s # without print \n included in the output
+'First line.\nSecond line.'
+>>> print s
+First line.
+Second line.
+>>> u'Hello World !'
+u'Hello World !'
+>>> u'Hello\u0020World !'
+u'Hello World !'
+>>> ur'Hello\u002World !'
+  File "<stdin>", line 1
+SyntaxError: (unicode error) 'rawunicodeescape' codec can't decode bytes in position 5-9: truncated \uXXXX
+>>> ur'Hello\u0020World !'
+u'Hello World !'
+>>> ur'Hello\\u002World !'
+u'Hello\\\\u002World !'
+>>> u"abc"
+u'abc'
+>>> str(u"abc")
+'abc'
+>>> u"äöü"
+u'\xe4\xf6\xfc'
+>>> str(u"äöü")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-2: ordinal not in range(128)
+>>> u"äöü".encode('utf-8')
+'\xc3\xa4\xc3\xb6\xc3\xbc'
+>>> unicode('\xc3\xa4\xc3\xb6\xc3\xbc'
+... 
+KeyboardInterrupt
+>>> unicode('\xc3\xa4\xc3\xb6\xc3\xbc', 'utf-8')
+u'\xe4\xf6\xfc'
+>>> squares = [1, 4, 9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]
+>>> squares[0]
+1
+>>> squares[-1]
+25
+>>> squares[-3:]
+[9, 16, 25]
+>>> squares
+[1, 4, 9, 16, 25]
+>>> squares[:]
+[1, 4, 9, 16, 25]
+>>> squares + [36, 49, 81, 100]
+[1, 4, 9, 16, 25, 36, 49, 81, 100]
+>>> cubes = [1, 8, 27, 65, 125]
+>>> 4 ** 3
+64
+>>> 4 ** 3 # the cude of 4 is 64, not 65!
+64
+>>> cubes[3] = 64 # replace the wrong value
+>>> cubes
+[1, 8, 27, 64, 125]
+>>> cubes.append(216) # add the cube of 6
+>>> cubes.append(7**3) # add the cube of 7
+>>> cubes
+[1, 8, 27, 64, 125, 216, 343]
+>>> letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+>>> letters
+['a', 'b', 'c', 'd', 'e', 'f', 'g']
+>>> # replace some values
+... letters[2:5] = ['C', 'D', 'E']
+>>> letters
+['a', 'b', 'C', 'D', 'E', 'f', 'g']
+>>> # now remove them
+... letters[2:5] = []
+>>> letters
+['a', 'b', 'f', 'g']
+>>> # clear the list by replacing all the elements with an empty list
+... 
+>>> letters[:] = []
+>>> letters
+[]
+>>> letters = ['a', 'b', 'c', 'd']
+>>> len(letters)
+4
+>>> a = ['a', 'b', 'c']
+>>> n = [1, 2, 3]
+>>> x = [a, n]
+>>> x
+[['a', 'b', 'c'], [1, 2, 3]]
+>>> x[0]
+['a', 'b', 'c']
+>>> x[0][1]
+'b'
+>>> # fibbonacci series:
+... # the sum of to elements defines the next
+... a, b = 0, 1
+>>> while b < 10
+  File "<stdin>", line 1
+    while b < 10
+               ^
+SyntaxError: invalid syntax
+>>> while b < 10:
+...     print b
+...     a, b = b, a+b
+... 
+1
+1
+2
+3
+5
+8
+>>> i = 256*256
+>>> print 'The value of i is', i
+The value of i is 65536
+>>> a, b = 0, 1
+>>> while b < 1000:
+...     print b,
+...     a, b = b, a+b
+... 
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+
